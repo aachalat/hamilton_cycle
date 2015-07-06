@@ -1,0 +1,64 @@
+Tool for finding Hamiltonian Cycles in a graph.
+
+These programs use code derived from William Kocay's
+Groups and Graphs program and thesis work done by
+Andrew Chalaturnyk.
+
+Building:
+---------
+
+In the main source folder (with the Makefile) either type
+'make debug' or 'make release'.  The release version will be
+much faster.
+
+Three example programs will be built from the 'example*.c' files.
+These are compiled and linked to the 'hc', 'hc_count' and 'hc_list_cycle'
+executables.
+
+Execute each without arguments or with the -h flag for help on each.
+
+Input Files:
+------------
+
+A sample input file of graphs are included in (TestGraphs.txt).
+
+The text format for a graph is as follows: (starts after the ----)
+
+----
+$
+&Graph
+Petersen
+10
+-1 10 7 3
+-2 9 4 3
+-3 5
+-4 7 6
+-5 8 6
+-6 10
+-7 8
+-8 9
+-9 10  0
+-------
+
+The single '$' at the start of a line indicates a new graph is to be defined.
+In this way multiple graphs can be defined per file.
+
+Immediately following the '$' line the header '&Graph' must be found as in the
+example.
+
+The next line is the title of the graph being defined.
+
+After the title line, the next line lists the number of vertices found in the
+graph.  The next entries are all numerical and are separated by whitespace.
+
+Adjacency statements for a vertex start with a negative value for the
+vertex in question followed by positive values indicating which vertices are
+adjacent to said vertex.  In the above example of the petersen graph 
+vertex 1 is said to be adjacent to vertices 10, 7 and 3.  Adjacency
+statements for an edge only have to be listed once per pair (eg vertex 10 is
+still adjacent to vertices 1, 6 and 9 in the above example).
+
+Once all adjacency statements are listed a single '0' value marks the end
+of the graph definition.
+
+Enjoy!
